@@ -1,0 +1,14 @@
+.containter1 {
+    display: flex;
+    justify-content: center;
+}
+
+#ol_map {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.69);
+    height: 760px;
+    width: 1200px;
+    margin: 5%;
+    cursor: pointer;
+    padding: 1%;
+}

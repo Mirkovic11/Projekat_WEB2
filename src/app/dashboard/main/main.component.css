@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 2%;
+    height: 280px;
+    width: 320px;
+    box-sizing: border-box;
+    background: #151515;
+    border-radius: 10%;
+    border-top: 1px solid rgba(255, 255, 255, 0.69);
+    border-right: 1px solid rgba(255, 255, 255, 0.69);
+    border-left: 1px solid rgba(255, 255, 255, 0.69);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.69);
+    cursor: pointer;
+}
+
+.my_incident_card:hover {
+    border-top: 2px solid rgb(148, 219, 219);
+    border-right: 2px solid rgb(148, 219, 219);
+    border-left: 2px solid rgb(148, 219, 219);
+    border-bottom: 2px solid rgb(148, 219, 219);
+}
+
+.my_work_plans_card:hover {
+    border-top: 2px solid rgb(230, 231, 149);
+    border-right: 2px solid rgb(230, 231, 149);
+    border-left: 2px solid rgb(230, 231, 149);
+    border-bottom: 2px solid rgb(230, 231, 149); 
+}
+
+.my_safety_docs_card:hover {
+    border-top: 2px solid rgb(149, 216, 143);
+    border-right: 2px solid rgb(149, 216, 143);
+    border-left: 2px solid rgb(149, 216, 143);
+    border-bottom: 2px solid rgb(149, 216, 143);
+}
+
+.my_work_order_card:hover {
+    border-top: 2px solid rgb(216, 172, 143);
+    border-right: 2px solid rgb(216, 172, 143);
+    border-left: 2px solid rgb(216, 172, 143);
+    border-bottom: 2px solid rgb(216, 172, 143);
+}
+
+.card p {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 6%;
+}
+
+.my_incidents_p {
+    color: rgb(148, 219, 219);
+}
+
+.my_work_plans_p {
+    color: rgb(230, 231, 149);
+}
+
+.my_safety_docs_p {
+    color: rgb(149, 216, 143);
+}
+
+.my_work_order_p {
+    color: rgb(216, 172, 143);
+}
+
+.card_content {
+    margin-top: 16%;
+}
+
+.card_content p {
+    font-size: 20px;
+    color: #757575;
+}
+
+#divChart {
+    display: block;
+    width: 400px;
+    height: 400px;
+    background: white;
+    position: absolute;
+    top: 40%;
+    left:40%;
+}
+

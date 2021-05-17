@@ -1,0 +1,20 @@
+<mat-sidenav-container class="example-container" >
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+            <div><img src="../../assets/search.png"/> <p>SEARCH</p> </div>
+            <div [routerLink]="'main'"><img src="../../assets/home.png"/> <p>MAIN</p> </div>
+            <div [routerLink]="'notifications'"><img src="../../assets/news.png"/> <p>NOTIFICATIONS</p> </div>
+            <div [routerLink]="'map'"><img src="../../assets/map.png"/> <p>MAP</p> </div>
+            <div><img src="../../assets/docs.png"/> <p>DOCUMENTS</p> </div>           
+            <div><img src="../../assets/socket.png"/> <p>ADD ELEMENT</p> </div>
+            <div><img src="../../assets/addteam.png"/> <p>ADD TEAM</p> </div>
+            <div><img src="../../assets/add.png"/> <p>ADD CONSUMER</p> </div>
+            <div><img src="../../assets/settings.png"/> <p>SETTINGS</p> </div>
+            <div><img src="../../assets/logout.png"/>  <p>LOG OUT</p>  </div>       
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

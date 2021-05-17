@@ -1,0 +1,42 @@
+.example-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #151515;
+}
+
+mat-nav-list {
+    width: 280px;
+    height: 99.2%;
+    color: #757575;
+    background: rgb(242, 251, 255);
+    border-right: 3px solid rgb(145, 210, 253);
+}
+
+div:hover {
+    background: rgb(213, 248, 248);
+    cursor: pointer;
+}
+
+div {
+    position: relative;
+    margin-top: 11px;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 78px;
+}
+
+div img {
+    margin-left: 2%;
+}
+
+div p {
+    position: absolute;
+    top: 40%;
+    left: 42%;
+    font-size: 18px;
+}
