@@ -30,6 +30,12 @@ import { MyincidentsComponent } from './dashboard/myincidents/myincidents.compon
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MapComponent } from './dashboard/map/map.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { CallComponent } from './dashboard/call/call.component';
+import { UserService } from './services/user/user.service';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import { MapComponent } from './dashboard/map/map.component';
     MainComponent,
     NotificationsComponent,
     MyincidentsComponent,
-    MapComponent
+    MapComponent,
+    ProfileComponent,
+    CallComponent
   ],
   imports: [
     BrowserModule,
@@ -61,9 +69,14 @@ import { MapComponent } from './dashboard/map/map.component';
     IgxDataChartCoreModule,
     IgxDataChartCategoryModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ChartsModule
   ],
-  providers: [],
+  providers: [ 
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

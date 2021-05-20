@@ -4,11 +4,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #151515;
+    background: white;
 }
 
 mat-nav-list {
-    width: 280px;
+    width: 190px;
     height: 99.2%;
     color: #757575;
     background: rgb(242, 251, 255);
@@ -27,7 +27,7 @@ div {
 }
 
 img {
-    width: 78px;
+    width: 35px;
 }
 
 div img {
@@ -37,6 +37,6 @@ div img {
 div p {
     position: absolute;
     top: 40%;
-    left: 42%;
+    left: 25%;
     font-size: 18px;
 }

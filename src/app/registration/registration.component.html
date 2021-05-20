@@ -1,70 +1,73 @@
+
 <mat-card>
-    <mat-card-title>Registration:</mat-card-title>
+  <mat-card-title>Registration:</mat-card-title>
 <mat-card-content>
 
 <form >
-  <p>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Username" formControlName="username">
-    </mat-form-field>
-  </p>
-
-  <p>
-    <mat-form-field>
-      <input type="email" matInput placeholder="Email" formControlName="email">
-    </mat-form-field>
-  </p>
-
-  <p>
-    <mat-form-field>
-      <input type="password" matInput placeholder="Password" formControlName="password1">
-    </mat-form-field>
-  </p>
-
-  <p>
-    <mat-form-field>
-      <input type="password" matInput placeholder="Confirm Password" formControlName="password2">
-    </mat-form-field>
-  </p>
-
-  <p>
-    <mat-form-field>
-      <input type="text" matInput placeholder="First name" formControlName="firstname">
-    </mat-form-field>
-  </p>
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username"[formControl]="username" required>
   
-  <p>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Last name" formControlName="lastname">
-    </mat-form-field>
-  </p>
-  
-  <p>
-    <mat-form-field>
-      <input type="date" matInput placeholder="Birth" formControlName="birth">
-    </mat-form-field>
+  </mat-form-field>
+    <mat-label *ngIf="korImeDuplikat" style="color: red;">'{{kIme}}' postoji u bazi</mat-label>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="email" matInput placeholder="Email" [formControl]="email" required>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" [formControl]="password1" required>
+  </mat-form-field>
+  <mat-label *ngIf="duzina" style="color: red;">Najmanje 8 karaktera</mat-label>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Confirm Password" [formControl]="password2" required>
+  </mat-form-field>
+  <mat-label *ngIf="netacnaSifra" style="color: red;">Ne poklapaju se sifre</mat-label>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="First name" [formControl]="firstname" required>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Last name" [formControl]="lastname" required>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="date" matInput placeholder="Birth" [formControl]="birth" required>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Address" [formControl]="address" required>
+  </mat-form-field>
+</p>
+
+<p>
+<mat-select [formControl]="tip" placeholder="Type" required>
+    <mat-option *ngFor="let option of listaTipova" [value]="option">{{option}}</mat-option>
+</mat-select>
   </p>
 
-  <p>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Address" formControlName="address">
-    </mat-form-field>
-  </p>
-
-  <p>
-  <mat-select>
-    <mat-option value="one">Team member</mat-option>
-    <mat-option value="two">Dispatcher</mat-option>
-    <mat-option value="two">Worker</mat-option>
-    <mat-option value="two">Consumer</mat-option>
-  </mat-select>
-    </p>
-
-  <div class="button">
-    <button type="submit" mat-raised-button color="primary">Register</button>
-  </div>
+<div class="button">
+  <button type="submit" mat-raised-button color="primary" (click)="register()" >Register</button>
+</div>
 </form>
 
 </mat-card-content>
 
 </mat-card>
+
