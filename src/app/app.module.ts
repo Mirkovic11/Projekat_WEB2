@@ -37,6 +37,11 @@ import { UserService } from './services/user/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileRegisteredUsersComponent } from './dashboard/profile-registered-users/profile-registered-users.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +53,10 @@ import { ChartsModule } from 'ng2-charts';
     MyincidentsComponent,
     MapComponent,
     ProfileComponent,
-    CallComponent
+    CallComponent,
+    ProfileRegisteredUsersComponent,
+  
+
   ],
   imports: [
     BrowserModule,
@@ -72,7 +80,8 @@ import { ChartsModule } from 'ng2-charts';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    NgbModule
   ],
   providers: [ 
     UserService

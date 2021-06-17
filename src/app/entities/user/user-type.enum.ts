@@ -3,5 +3,6 @@ export enum UserType {
     Administrator = 'Administrator',
     Dispatcher = 'Dispatcher',
     Worker = 'Worker',
-    Consumer = 'Consumer'
+    Consumer = 'Consumer',
+    None = ''
 }

@@ -1,1 +1,178 @@
-<p>call works!</p>
+<div class="container">
+    <form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm">
+       
+        
+        <div class="row">
+            <div class="col-25">
+                 <label>Reason: </label>
+            </div>
+      
+        <div class="col-75">
+            <select name="reason" id="reason" ngModel required>
+                <option value="struja">Nema struje</option>
+                <option value="kvar">Postoji kvar</option>
+                <option value="treptanje">Treptanje svjetla</option>
+                <option value="povratak">Povratak struje</option>
+                <option value="djelimicna">Djelimicna struja</option>
+                <option value="napon">Problemi sa naponom</option>
+            </select>
+        </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-25">
+                 <label>Commnet: </label>
+            </div>
+      
+        <div class="col-75">
+        <input type="text" id="comment" name="comment" ngModel #comment="ngModel" required>
+        <div *ngIf="f.submitted && comment.invalid">
+            <div>Unesite sifru</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+             <label>Hazzard: </label>
+        </div>
+  
+    <div class="col-75">
+        <input type="text" id="hazzard" name="hazzard" ngModel #hazzard="ngModel" required>
+        <div *ngIf="f.submitted && hazzard.invalid">
+            <div>Unesite email adresu</div>
+        </div>
+    </div>
+    </div>
+      
+
+
+<br>
+
+
+<div style="width: 100%;  border-radius: 15px; border: 1px solid black; margin:0 auto;">
+    <label style="float: left;"><p>Costumer info</p></label>
+
+    <label style=" float: right;">Select costumer 
+       <button class="select" (click)="triggerModal(modalData)"> 
+        
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg>   
+       
+        </button> 
+    </label>
+
+    <!--div class="form-group">
+                          
+      <div class="col-xs-6"></div></div>
+
+    <label>First name:</label>
+    <input type="text"id="fName" name="fName" ngModel #comment="ngModel"style="width: 30%;">
+    
+    <label>First name:</label>
+    <input type="text"id="fName" name="fName" ngModel #comment="ngModel"style="width:30%;"-->
+ 
+    <table class="table table-hover"style="width: 95%; margin: 0 auto;">
+        <thead>
+            <tr>
+                <td>Name:</td>
+                <td>Last Name: </td>
+                <td>Address:</td>                
+                <td>Account:</td>                
+                <td>Priority:</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{korisnik.firstName}}</td>
+                <td>{{korisnik.lastName}}</td>
+                <td>{{korisnik.type}}</td>
+                <td>{{korisnik.status}}</td>
+                <td>{{korisnik.email}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br/>
+<div class="row">
+
+  <button class="btn" [disabled]="!f.form.valid" type="submit">Submit</button>
+</div>
+
+ 
+<!--MODAL-->
+    <ng-template #modalData let-modal >
+        <div style="background-color: whitesmoke;">
+      <div class="modal-header" >
+        <h4 class="modal-title" id="modal-basic-title">List of users</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="container2">
+      
+
+        <input id="inputSrc" name="inputSrc" type="text" placeholder="Enter username" style="width: 80%; border: white; border-radius: 25px; outline: none;" />
+        <button class="search" id="search" (click)="filtiraj()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+        </button>
+        <button [hidden]="!pretraga" class="search" id="clear" (click)="ponisti()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+        </svg>
+        </button>
+        
+        
+       
+    </div>
+
+      <div class="modal-body">
+       
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+               
+                <th scope="col">User name</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Address</th>
+                <th></th>
+          
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let k of listaKorisnika">
+                
+                <td>{{k.userName}}</td>
+                <td>{{k.firstName}}</td>
+                <td>{{k.lastName}}</td>
+                <td>{{k.address}}</td>
+                <td>
+                    <button class="btn-success" (click)="selektovani(k)">Ok</button>
+                </td>
+           
+              </tr>
+            </tbody>
+          </table>
+       
+          
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+      </div>
+
+    </div>
+    </ng-template>
+
+  </form>
+</div>
