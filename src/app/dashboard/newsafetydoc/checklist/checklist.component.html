@@ -1,0 +1,45 @@
+<!--mat-selection-list #devices>
+    <mat-option >
+     staaa
+    </mat-option>
+  </mat-selection-list>
+  
+  
+  <button mat-raised-button color="primary" class="save" >Save</button-->
+
+    <!--section class="example-section" >
+        <h4>Select your toppings:</h4>
+        <p><mat-checkbox [(ngModel)]="safeDoc.operationsCompleted">Pepperoni</mat-checkbox></p>
+        <p><mat-checkbox >Extra Cheese</mat-checkbox></p>
+        <p><mat-checkbox >Mushroom</mat-checkbox></p>
+      </section-->
+   <div class="class">   
+      <br/>
+        All work operations completed?
+      <br/>
+    
+        <mat-slide-toggle [(ngModel)]="safeDoc.operationsCompleted"></mat-slide-toggle>
+
+     <br/>
+     <br/>
+     <mat-label>All tags removed?</mat-label>
+     <br/>
+    
+        <mat-slide-toggle [(ngModel)]="safeDoc.tagsRemoved"></mat-slide-toggle>
+
+     <br/>
+     <br/>
+     <mat-label>Grounding removed?</mat-label>
+     <br/>
+    
+        <mat-slide-toggle [(ngModel)]="safeDoc.groundingRemoved"></mat-slide-toggle>
+
+     <br/>
+     <br/>
+     <mat-label>Ready for service?</mat-label>
+     <br/>
+    
+        <mat-slide-toggle [(ngModel)]="safeDoc.ready"></mat-slide-toggle>
+
+     <br/>
+    </div>

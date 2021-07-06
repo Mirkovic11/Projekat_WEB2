@@ -1,0 +1,23 @@
+
+<mat-toolbar>
+    
+  <span >New safety document</span>
+ 
+</mat-toolbar>
+<!--mat-tab-group> 
+  <a  routerLink="/dashboard/mysafetydocs/newSafetyDoc/basicInfo"> 
+  <mat-tab label="Basic info"><app-basicinfodoc></app-basicinfodoc></mat-tab>
+</a>
+  <mat-tab label="History" ><app-historydoc></app-historydoc></mat-tab>
+  <mat-tab label="Multimedia"><app-multimediadoc></app-multimediadoc></mat-tab>
+  <mat-tab label="Check list"><app-checklist></app-checklist></mat-tab>
+</mat-tab-group-->
+<nav mat-tab-nav-bar>
+  <a mat-tab-link routerLink="/dashboard/mysafetydocs/newSafetyDoc/basicInfo">Basic information</a>
+  <a mat-tab-link routerLink="/dashboard/mysafetydocs/newSafetyDoc/checkList">Check list</a>
+  <a mat-tab-link routerLink="/dashboard/mysafetydocs/newSafetyDoc/equipment">Equipment</a>
+
+<button mat-raised-button style="position: absolute; right: 5px; height: 40px; align-self: center;">Save</button>
+</nav>
+
+<router-outlet></router-outlet>

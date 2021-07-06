@@ -1,0 +1,74 @@
+<div>
+  
+  <mat-form-field>
+      <mat-label>INCIDENT ID system generated</mat-label>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <mat-select >
+        <mat-option value="one">Planiran</mat-option>
+        <mat-option value="two">Neplaniran</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Priority</mat-label>
+      <mat-select>
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Confirmed:</mat-label>
+      <mat-select>
+        <mat-option value="cf">Confirmed</mat-option>
+        <mat-option value="ncf">Not confirmed</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>ETA: </mat-label>
+    <input matInput type="datetime-local">
+  </mat-form-field>
+    
+  <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>ATA: </mat-label>
+      <input matInput type="datetime-local">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Affected consumers</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Number of calls</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Incident time: </mat-label>
+      <input matInput type="datetime-local">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>ETR: </mat-label>
+      <input matInput type="datetime-local">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Voltage[kv]</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Scheduled time: </mat-label>
+      <input matInput type="datetime-local">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    
+</div>
+<button mat-raised-button class="save" >Save</button>

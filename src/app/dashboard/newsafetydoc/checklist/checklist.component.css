@@ -1,0 +1,42 @@
+.save{
+    margin-left: 10px;
+    width: 100px;
+}
+.sadrzaj
+{
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    float:center;
+    margin-top: 100px;
+    margin-left: 500px;  /* stavi 500 da bude desno*/
+   
+}
+td {
+    text-align: center;
+    padding:5px;
+  }
+
+.tabela
+{
+    font-weight: bold;
+    width: 300px;
+    height: 400px;
+}
+
+.ikonice
+{
+    float:right;
+    
+}
+.komp
+{
+    color:black;
+    align-self: center;
+}
+
+.class{
+    font-size: large;
+    margin-left:25px;
+    margin-top: 10px;;
+}

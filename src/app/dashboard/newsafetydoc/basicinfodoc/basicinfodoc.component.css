@@ -1,0 +1,58 @@
+/*:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  mat-form-field{
+      margin-top: 10px;
+      margin-left: 10px;
+      display: inline-block;
+      
+      flex-wrap: wrap;
+  }*/
+
+  .sadrzaj
+{
+    width: 650px;
+    height: 550px;
+    background-color: white;
+    float:center;
+    margin-top: 50px;
+    margin-left: 300px;  /* stavi 500 da bude desno*/
+   
+}
+td {
+    text-align: center;
+    padding:5px;
+  }
+
+.tabela
+{
+   
+    width: 650px;
+    height: 450px;
+}
+
+th{
+    font-weight:bolder;  
+    text-align: left;
+    padding:5px;
+    margin: 50px;
+}
+.ikonice
+{
+    float:right;
+    
+}
+.komp
+{
+    color:black;
+    align-self: center;
+}
+
+
+.class{
+    font-size: large;
+    margin-left:25px;
+    margin-top: 10px;;
+}

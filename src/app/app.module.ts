@@ -40,7 +40,36 @@ import { ChartsModule } from 'ng2-charts';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileRegisteredUsersComponent } from './dashboard/profile-registered-users/profile-registered-users.component';
+import { MysafetydocsComponent } from './dashboard/mysafetydocs/mysafetydocs.component';
 
+import { NewsafetydocComponent } from './dashboard/newsafetydoc/newsafetydoc.component';
+import { BasicinfodocComponent } from './dashboard/newsafetydoc/basicinfodoc/basicinfodoc.component';
+import { HistorydocComponent } from './dashboard/newsafetydoc/historydoc/historydoc.component';
+import { ChecklistComponent } from './dashboard/newsafetydoc/checklist/checklist.component';
+import { MultimediadocComponent } from './dashboard/newsafetydoc/multimediadoc/multimediadoc.component';
+
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { IncidentsComponent } from './dashboard/incidents/incidents.component';
+import { NewincidentComponent } from './dashboard/newincident/newincident.component';
+import { BasicinfoComponent } from './dashboard/newincident/basicinfo/basicinfo.component';
+import { DevicesComponent } from './dashboard/newincident/devices/devices.component';
+import { CallsComponent } from './dashboard/newincident/calls/calls.component';
+import { CrewComponent } from './dashboard/newincident/crew/crew.component';
+import { EquipmentComponent } from './dashboard/newincident/equipment/equipment.component';
+import { MultimediaComponent } from './dashboard/newincident/multimedia/multimedia.component';
+import { ResolutionComponent } from './dashboard/newincident/resolution/resolution.component';
+
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MaterialModule } from './material/material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { EquipmentdocComponent } from './dashboard/newsafetydoc/equipment/equipmentdoc/equipmentdoc.component';
+import { DeviceModalComponent } from './dashboard/newsafetydoc/deviceModal/device-modal/device-modal.component';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -55,6 +84,23 @@ import { ProfileRegisteredUsersComponent } from './dashboard/profile-registered-
     ProfileComponent,
     CallComponent,
     ProfileRegisteredUsersComponent,
+    MysafetydocsComponent,
+    NewsafetydocComponent,
+    BasicinfodocComponent,
+    HistorydocComponent,
+    ChecklistComponent,
+    MultimediadocComponent,
+    IncidentsComponent,
+    NewincidentComponent,
+    BasicinfoComponent,
+    DevicesComponent,
+    CallsComponent,
+    CrewComponent,
+    EquipmentComponent,
+    MultimediaComponent,
+    ResolutionComponent,
+    EquipmentdocComponent,
+    DeviceModalComponent
   
 
   ],
@@ -81,7 +127,24 @@ import { ProfileRegisteredUsersComponent } from './dashboard/profile-registered-
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    NgbModule
+    NgbModule,
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MaterialModule,
+    ToastrModule.forRoot(),
+
+  ],
+  exports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    BrowserAnimationsModule,   
+    MatTooltipModule,
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [ 
     UserService

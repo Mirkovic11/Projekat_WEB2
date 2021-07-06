@@ -1,0 +1,10 @@
+<mat-selection-list #devices>
+  <mat-list-option *ngFor="let device of typeOfDevice">
+    {{device}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Options selected: {{devices.selectedOptions.selected.length}}
+</p>
+<button mat-raised-button class="save" >Save</button>

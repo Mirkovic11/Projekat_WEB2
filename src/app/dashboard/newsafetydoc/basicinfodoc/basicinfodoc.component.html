@@ -1,0 +1,80 @@
+
+<div class="class">
+  <table class="tabela">
+  <tr>
+    <th>
+      Type:
+    </th>
+      
+    <td>
+      <mat-form-field>         
+          <mat-select  [(ngModel)]="safeDoc.type">
+            <mat-option value="Planned">PlannedWork</mat-option>
+            <mat-option value="Unplanned">UnplannedWork</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+ 
+<tr>
+  <th>    <mat-label>WorkPlan ID: </mat-label> </th>
+<td>    <mat-form-field name="type">
+      <mat-select  [(ngModel)]="safeDoc.workPlanId">
+          <mat-option *ngFor="let item of plans" [value]="item">
+            {{item}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </td>
+
+  </tr>
+    <tr> 
+      <th>  <mat-label>Status: </mat-label> </th>
+      <td>  <mat-label> DRAFT</mat-label> </td>
+   </tr>
+    <tr>
+      <th>
+    <mat-label><b>Date created: </b></mat-label>
+  </th>
+  <td>
+    <mat-label>{{date}}</mat-label>
+  </td>
+  </tr>
+
+  <tr>
+    <th>
+  <mat-label><b>Created by: </b></mat-label>
+</th>
+<td>
+  <mat-label>Zeljana</mat-label>
+</td>
+</tr>
+
+
+<tr>
+  <th><b>Details:</b></th>
+  <td>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Details</mat-label>
+        <input matInput placeholder="Details" [(ngModel)] = "safeDoc.details" required>
+      </mat-form-field>
+    </p>
+  </td>
+</tr>
+
+
+<tr>
+  <th>Notes:</th>
+  <td>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Notes</mat-label>
+        <input matInput placeholder="notes" [(ngModel)] = "safeDoc.notes" required>
+      </mat-form-field>
+    </p>
+  </td>
+</tr>
+      
+</table>   
+</div>

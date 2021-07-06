@@ -1,0 +1,23 @@
+mat-tab-group{
+    height: 100%;
+    width:100%;
+    background-color: white;
+}
+
+mat-tab{
+    width: 14.29%;
+}
+mat-form-field{
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    
+    flex-wrap: wrap;
+}
+
+.save{
+
+    position:absolute;
+    bottom: 1%;
+    right: 2%;
+}

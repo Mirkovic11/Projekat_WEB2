@@ -1,0 +1,31 @@
+
+
+table {
+    padding:initial; 
+}
+
+.buttons
+{
+    margin:10px;
+    background-color:#00202e;
+    text-align: center;
+    
+
+}
+.btn-regular {
+    background: #07171e;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 35px;
+    font-weight: 600;  
+    margin-top: 20px;
+    left:5%;
+    
+}
+
+.btn-regular:hover {
+    color: #00202e;
+    text-decoration: none;
+}
