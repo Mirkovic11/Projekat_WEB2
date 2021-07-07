@@ -7,7 +7,14 @@ import { MainComponent } from './dashboard/main/main.component';
 import { MapComponent } from './dashboard/map/map.component';
 import { MyincidentsComponent } from './dashboard/myincidents/myincidents.component';
 import { MysafetydocsComponent } from './dashboard/mysafetydocs/mysafetydocs.component';
+import { AddNewDeviceComponent } from './dashboard/newdevice/addnewdevice/add-new-device/add-new-device.component';
+import { NewDeviceComponent } from './dashboard/newdevice/new-device/new-device.component';
+import { BasicinfoComponent } from './dashboard/newincident/basicinfo/basicinfo.component';
+import { CallsComponent } from './dashboard/newincident/calls/calls.component';
+import { CrewComponent } from './dashboard/newincident/crew/crew.component';
+import { DevicesComponent } from './dashboard/newincident/devices/devices.component';
 import { NewincidentComponent } from './dashboard/newincident/newincident.component';
+import { ResolutionComponent } from './dashboard/newincident/resolution/resolution.component';
 import { BasicinfodocComponent } from './dashboard/newsafetydoc/basicinfodoc/basicinfodoc.component';
 import { ChecklistComponent } from './dashboard/newsafetydoc/checklist/checklist.component';
 import { EquipmentdocComponent } from './dashboard/newsafetydoc/equipment/equipmentdoc/equipmentdoc.component';
@@ -45,10 +52,21 @@ const routes: Routes = [
      
      
       {path: 'incidents', component: IncidentsComponent},
-      {path: 'incidents/newincident', component: NewincidentComponent},
+      {path: 'incidents/newincident', component: NewincidentComponent,
+        children: [
+          {path: 'basicInfo', component: BasicinfoComponent},
+          {path: 'calls', component: CallsComponent },
+          {path: 'crew', component: CrewComponent},
+          {path: 'devices', component: DevicesComponent},
+          {path: 'resolution', component:ResolutionComponent}
+        ]
+      },
 
       {path: 'call', component: CallComponent},
-      {path: 'proba', component: MyincidentsComponent}
+      {path: 'proba', component: MyincidentsComponent},
+      {path: 'devices', component: NewDeviceComponent},
+      {path: 'devices/newDevice', component: AddNewDeviceComponent}
+     
       //{path: 'registeredUsers', component: ProfileRegisteredUsersComponent},
      
     ]},

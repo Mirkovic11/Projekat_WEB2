@@ -70,6 +70,8 @@ import { EquipmentdocComponent } from './dashboard/newsafetydoc/equipment/equipm
 import { DeviceModalComponent } from './dashboard/newsafetydoc/deviceModal/device-modal/device-modal.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { NewDeviceComponent } from './dashboard/newdevice/new-device/new-device.component';
+import { AddNewDeviceComponent } from './dashboard/newdevice/addnewdevice/add-new-device/add-new-device.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +102,9 @@ import { ToastrModule } from 'ngx-toastr';
     MultimediaComponent,
     ResolutionComponent,
     EquipmentdocComponent,
-    DeviceModalComponent
+    DeviceModalComponent,
+    NewDeviceComponent,
+    AddNewDeviceComponent
   
 
   ],

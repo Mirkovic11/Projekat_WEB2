@@ -1,10 +1,10 @@
-<mat-selection-list #teams [multiple]="false">
-    <mat-list-option *ngFor="let team of nubmerOfTeam" [value]="team">
-      {{team}}
+<mat-selection-list #teams [multiple]="false" [(ngModel)]="izabranaEkipa">
+    <mat-list-option *ngFor="let team of ekipa" [value]="team.id">
+      {{team.name }} - {{team.list}}
     </mat-list-option>
   </mat-selection-list>
   
-  <p>
-    Option selected: {{teams.selectedOptions.selected[0]?.value}}
+  <hr>
+  <p style="margin: 10px;">
+   <i> Option selected:  </i> <b>{{teams.selectedOptions.selected[0]?.value}}</b>
   </p>
-  <button mat-raised-button class="save" >Save</button>

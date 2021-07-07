@@ -1,46 +1,52 @@
 <div>
 
-  <mat-form-field appearance="fill">
-      <mat-label>Cause</mat-label>
-      <mat-select>
-        <mat-option value="1">time</mat-option>
-        <mat-option value="2">human factor</mat-option>
-        <mat-option value="3">failure</mat-option>
-        
+  <tr>
+    <td>
+      <mat-form-field appearance="fill">
+      <mat-label>Select cause</mat-label>
+      <mat-select [(ngModel)]="izabraniUzrok" (selectionChange)="onCauseChange($event)">
+        <mat-option *ngFor="let item of uzroci" [value]="item">
+          {{item}}
+        </mat-option>
       </mat-select>
     </mat-form-field>
+    </td>
   
-    <mat-form-field appearance="fill">
-      <mat-label>Subcause</mat-label>
-      <mat-select>
-        <mat-option value="1">Grmljavina</mat-option>
-        <mat-option value="2">Uragan</mat-option>
-        <mat-option value="3">Vjetar</mat-option>
-        <mat-option value="4">Grad</mat-option>
-        <mat-option value="5">Snjeg</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Construction type</mat-label>
-      <mat-select>
-        <mat-option value="1">Nadzemni</mat-option>
-        <mat-option value="2">Podzemni</mat-option>
-        <mat-option value="3">None</mat-option>
-        
-      </mat-select>
-    </mat-form-field>
-  
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Material</mat-label>
-      <mat-select>
-        <mat-option value="1">Plastika</mat-option>
-        <mat-option value="2">Metal</mat-option>
-        <mat-option value="3">Bakar</mat-option>
-        
-      </mat-select>
-    </mat-form-field>
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Select subcause</mat-label>
+        <mat-select [(ngModel)]="izabraniPoduzrok">
+          <mat-option *ngFor="let item of poduzroci" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    </td>
+
+
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Select construction type</mat-label>
+        <mat-select [(ngModel)]="izabranaKonstrukcija">
+          <mat-option value="Underground">Underground</mat-option>
+          <mat-option value="Overground">Overground</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+
+
+     <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Select material</mat-label>
+        <mat-select [(ngModel)]="izabraniMaterijal">
+          <mat-option value="Metal">Metal</mat-option>
+          <mat-option value="Plastic">Plastic</mat-option>
+          <mat-option value="Wood">Wood</mat-option>
+        </mat-select>
+      </mat-form-field>
+     </td>
+  </tr>
+    
   
   </div>  

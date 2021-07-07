@@ -1,0 +1,76 @@
+<mat-toolbar>
+    
+    <span>New device</span>
+   
+</mat-toolbar>
+
+<div>
+    <table>
+        <tr>
+  
+            <td>
+                <mat-form-field  appearance="fill">
+                    <mat-label>Type:</mat-label>
+                    <mat-select [(ngModel)]="izabraniTip" (selectionChange)="onCauseChange($event)">
+                      <mat-option value="Switch">Switch</mat-option>
+                      <mat-option value="Transformator">Transformator</mat-option>
+                      <mat-option value="Fuse">Fuse</mat-option>
+                      <mat-option value="Dissconector">Dissconector</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </td>
+        <td>
+                <div>
+                  <p>
+                    <mat-form-field appearance="outline">
+                      <mat-label>Name</mat-label>
+                      <input matInput placeholder="Name" [(ngModel)]="ime" readonly>
+                    </mat-form-field>
+                  </p>
+                </div>
+              </td>
+      
+      
+            <td>
+                <div>
+                    <p>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Select Address</mat-label>
+                        <mat-select [(ngModel)]="izabranaUlica">
+                          <mat-option *ngFor="let item of ulice" [value]="item.name">
+                            {{item.name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </p>
+                  </div>
+            </td>
+      
+            <td>
+              <div>
+                <p>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Coordinates</mat-label>
+                    <input type="number" matInput placeholder="Coordinates">
+                  </mat-form-field>
+                </p>
+              </div>
+            </td>
+      
+            
+       
+
+
+          </tr>
+
+      <tr>
+        <td>
+            <div class="dugme">
+                <button mat-raised-button (click)="onSubmit()" style="margin-right: 20px;">Add</button>     
+
+        </div>
+   </td>
+      </tr>
+    </table>
+    
+</div>

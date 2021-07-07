@@ -1,0 +1,17 @@
+div{
+    margin:12px;
+    padding:12px;
+}
+
+td{
+    margin:15px;
+    padding:15px;
+    display: inline-block;
+}
+
+.dugme{
+    width: 50%;
+    margin-left:12px;
+    padding:12px;
+    display: inline-block;
+  }
