@@ -7,6 +7,7 @@ import { Device } from 'src/app/entities/device/device';
 import { SafeDocService } from 'src/app/services/safeDoc/safe-doc.service';
 import { ToastrService } from 'ngx-toastr';
 import { DeviceModalComponent } from '../../deviceModal/device-modal/device-modal.component';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
   selector: 'app-equipmentdoc',
@@ -23,7 +24,7 @@ export class EquipmentdocComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private safeDocService: SafeDocService,public dialog: MatDialog,/*  private deviceService:DeviceService,*/ private toastr: ToastrService) { 
+  constructor(private safeDocService: SafeDocService,public dialog: MatDialog, private deviceService:DeviceService, private toastr: ToastrService) { 
     this.dataSource = new MatTableDataSource();
     this.selectedDeviceId="";
   }
@@ -47,9 +48,26 @@ applyFilter(event: Event) {
   }
 }
 openDialog() :void {
+  console.log("otvorio dialog");
   const dialogRef=this.dialog.open(DeviceModalComponent, 
     {width: '60%',
     data: {deviceId: this.selectedDeviceId, incidentId:-1} });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed " + result);
+      this.deviceService.getDeviceByName(result).subscribe(
+      (res:any)=>{
+        this.safeDocService.trenutniUredjaji.push(res.povratnaVr);
+        this.dataSource=new MatTableDataSource(this.safeDocService.trenutniUredjaji);
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+        alert("Device successfully added!");
+      },
+      err=>{
+        console.log(err);
+      }
+      )
+    });
 }
 
 }

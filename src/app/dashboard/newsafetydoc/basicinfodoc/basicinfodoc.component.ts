@@ -15,6 +15,7 @@ export class BasicinfodocComponent implements OnInit {
   public safeDoc:SafeDocs;
   public plans:number[] = [];
   date:Date;
+  ime:string;
 
   constructor(private safeDocservice : SafeDocService, private router : Router, private route : ActivatedRoute) {
     /*this.plans=new Array<number>();
@@ -24,18 +25,20 @@ export class BasicinfodocComponent implements OnInit {
     this.safeDoc=safeDocservice.trenutni;/*new SafeDocs("",-1,"", "","",new Date(0,0,0),false,false,false,false)*/;
     this.plans=[1,23,30];
     this.date=new Date();
+    this.ime="";
 
     
    }
 
   ngOnInit(): void {
-    console.log(this.safeDoc);
+    this.ime=localStorage.getItem("FullName") as string;
+    console.log("Ime:");
+    console.log(this.ime);
   }
 
   ngOnDestroy(){
-      console.log(this.safeDoc.workPlanId);
       this.safeDocservice.trenutni=this.safeDoc;
-    console.log(this.safeDocservice.trenutni);
+      console.log(this.safeDocservice.trenutni);
   }
 
 }

@@ -17,7 +17,7 @@
   <a mat-tab-link routerLink="/dashboard/mysafetydocs/newSafetyDoc/checkList">Check list</a>
   <a mat-tab-link routerLink="/dashboard/mysafetydocs/newSafetyDoc/equipment">Equipment</a>
 
-<button mat-raised-button style="position: absolute; right: 5px; height: 40px; align-self: center;">Save</button>
+<button mat-raised-button (click)="onSubmit()" style="position: absolute; right: 5px; height: 40px; align-self: center;">Save</button>
 </nav>
 
 <router-outlet></router-outlet>

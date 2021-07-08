@@ -23,7 +23,7 @@ export class UserService {
     let list=new Array<User>();
 
     const u1=new User(1,"zeljanam","123456789","Zeljana", "Mirkovic", UserType.Administrator, "z@gmail.com", '11-01-1998',"Puskinova 25", "http://ssl.gstatic.com/accounts/ui/avatar_2x.png",StatusType.Accepted);
-    const u2=new User(2,"markom","123456789","Marko", "Markovic", UserType.Consumer, "mm@gmail.com", '11-01-1998',"Puskinova 25", "http://ssl.gstatic.com/accounts/ui/avatar_2x.png",StatusType.Processing);
+    const u2=new User(2,"markom","123456789","Marko", "Markovic", UserType.Consumer, "mm@gmail.com", '11-01-1998',"Puskinova 25", "http://ssl.gstatic.com/accounts/ui/avatar_2x.png",StatusType.Accepted);
     const u3=new User(3,"jankoo","123456789","Janko", "Jankovic", UserType.TeamMember, "jj@gmail.com", '11-01-1998',"Puskinova 25", "http://ssl.gstatic.com/accounts/ui/avatar_2x.png",StatusType.Denied);
     const u4=new User(4,"anaa","123456789","Ana", "Markovic", UserType.Worker, "ana@gmail.com", '11-01-1998',"Puskinova 25", "http://ssl.gstatic.com/accounts/ui/avatar_2x.png",StatusType.Processing);
     const u5=new User(4,"anaa","123456789","Jovan", "Jovanovic", UserType.Worker, "jovan@gmail.com", '11-01-1998',"Puskinova 25", "http://ssl.gstatic.com/accounts/ui/avatar_2x.png",StatusType.Processing);
