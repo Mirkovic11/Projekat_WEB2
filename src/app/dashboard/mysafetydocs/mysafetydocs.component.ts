@@ -28,9 +28,9 @@ export class MysafetydocsComponent implements AfterViewInit
     
     console.log(localStorage.getItem("Role"));
     if(localStorage.getItem("Role")==="Dispatcher"){
-      this.prikaziDugme=false;
-    }else {
       this.prikaziDugme=true;
+    }else {
+      this.prikaziDugme=false;
     }
   }
 

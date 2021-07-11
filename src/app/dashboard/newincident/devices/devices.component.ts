@@ -44,6 +44,22 @@ export class DevicesComponent implements AfterViewInit {
       width: '60%',
       data: { deviceId: this.selectedDeviceId, incidentId: -1}
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed' + result);
+      this.deviceService.getDeviceByName(result).subscribe(
+        (res:any)=>{
+          this.incidentService.trenutniUredjaji.push(res.povratnaVr);
+          this.dataSource = new MatTableDataSource(this.incidentService.trenutniUredjaji);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          this.toastr.success('You added a device');
+        },
+        err=>{
+          console.log(err);
+        }
+      )
+    });
   }
 
   applyFilter(event: Event) {

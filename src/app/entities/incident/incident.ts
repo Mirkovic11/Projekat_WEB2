@@ -15,7 +15,7 @@ export class Incident {
     address:string;
     cause:string;
     subCause:string;
-    construction:string;
+    constructionType:string;
     material:string;
 
 
@@ -36,7 +36,7 @@ export class Incident {
         this.address=addr;
         this.cause=caus;
         this.subCause=subCaus;
-        this.construction=constr;
+        this.constructionType=constr;
         this.material=mat;
     }
 }

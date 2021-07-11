@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import { Call } from 'src/app/entities/call/call';
 import { IncidentService } from 'src/app/services/incident/incident.service';
 import { CallService } from 'src/app/services/call/call.service';
+import { Device } from 'src/app/entities/device/device';
 
 
 @Component({
@@ -24,8 +25,19 @@ export class CallsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+    var body:Device[]=this.incidentService.trenutniUredjaji;
+    
+    this.callService.getCallsForDevices(body).subscribe((res:any)=>{
+      console.log(res.retval);
+      this.dataSource=new MatTableDataSource(res.retval);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    },
+    err=>{
+      console.log(err);
+      alert(err);
+    })
+
   }
 
   applyFilter(event: Event) {

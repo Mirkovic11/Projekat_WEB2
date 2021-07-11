@@ -57,11 +57,31 @@
 </p>
 
 <p>
-<mat-select [formControl]="tip" placeholder="Type" required>
+<!--mat-select [formControl]="tip" placeholder="Type" required>
     <mat-option *ngFor="let option of listaTipova" [value]="option">{{option}}</mat-option>
-</mat-select>
+</mat-select-->
+<mat-form-field appearance="fill">
+  <mat-label>Select Role</mat-label>
+  <mat-select [formControl]="tip" [(ngModel)]="selectedRole">
+      <mat-option value="Dispatcher">Dispatcher</mat-option>
+      <mat-option value="Crew Member">Crew Member</mat-option>
+      <mat-option value="Worker">Worker</mat-option>
+  </mat-select>
+  </mat-form-field>
   </p>
 
+  <p>
+    <div *ngIf="selectedRole=='Crew Member'">
+      <mat-form-field appearance="fill">
+      <mat-label>Select Crew</mat-label>
+      <mat-select [(ngModel)]="selectedCrew">
+          <mat-option *ngFor="let item of crews" [value]="item.id">
+          {{item.name}}
+          </mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+  
 <div class="button">
   <button type="submit" mat-raised-button color="primary" (click)="register()" >Register</button>
 </div>

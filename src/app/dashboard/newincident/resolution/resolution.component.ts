@@ -8,21 +8,19 @@ import { IncidentService } from 'src/app/services/incident/incident.service';
 })
 export class ResolutionComponent implements OnInit {
 
-  public uzroci:string[];
-  public poduzroci:string[];
+  public uzroci:string[]=["Human Error", "Weather","Equipment Failure"];;
+  public poduzroci:string[]=[];
   public izabraniUzrok;
   public izabraniPoduzrok;
   public izabranaKonstrukcija;
   public izabraniMaterijal;
 
   constructor(private incidentService:IncidentService) {
-    this.uzroci=["Human Error", "Weather","Equipment Failure"];
-    this.poduzroci=[];
     this.izabraniUzrok=incidentService.trenutniIncident.cause;
     this.izabraniPoduzrok=incidentService.trenutniIncident.subCause;
     console.log("***********\n"+incidentService.trenutniIncident.subCause+"*********");
    //nece da mi prikaze poduzrok kad se ponovo vratim na ovu karticu
-    this.izabranaKonstrukcija=incidentService.trenutniIncident.construction;
+    this.izabranaKonstrukcija=incidentService.trenutniIncident.constructionType;
     this.izabraniMaterijal=incidentService.trenutniIncident.material;
 
    }
@@ -48,7 +46,7 @@ export class ResolutionComponent implements OnInit {
     this.incidentService.trenutniIncident.material=this.izabraniMaterijal;
     this.incidentService.trenutniIncident.cause=this.izabraniUzrok;
     this.incidentService.trenutniIncident.subCause=this.izabraniPoduzrok;
-    this.incidentService.trenutniIncident.construction=this.izabranaKonstrukcija;
+    this.incidentService.trenutniIncident.constructionType=this.izabranaKonstrukcija;
   }
 
 }

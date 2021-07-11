@@ -24,5 +24,21 @@ namespace WebApp.DTOs
     }
 
 
+    private string id;
+
+    public string Id
+    {
+      get { return id; }
+      set { id = value; }
+    }
+
+    private string role;
+
+    public string Role
+    {
+      get { return role; }
+      set { role = value; }
+    }
+
   }
 }

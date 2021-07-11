@@ -21,7 +21,12 @@ export class NewDeviceComponent implements AfterViewInit {
 
   constructor(private deviceService:DeviceService) { 
     this.dataSource=new MatTableDataSource();
-    this.showAdd=true;
+
+    if(localStorage.getItem("Role") === "Dispatcher"){    
+      this.showAdd = true
+    }else{
+      this.showAdd = false;
+    }
   }
 
   ngOnInit(): void {
@@ -29,6 +34,12 @@ export class NewDeviceComponent implements AfterViewInit {
 
   
   ngAfterViewInit() {
+    this.deviceService.getDevices().subscribe((res:any)=>
+    {
+    this.dataSource=new MatTableDataSource(res);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    })
   }
 
   applyFilter(event: Event) {

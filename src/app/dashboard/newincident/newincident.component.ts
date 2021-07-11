@@ -1,25 +1,10 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IncidentService } from 'src/app/services/incident/incident.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  location: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', location: 'x'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', location: 'x'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', location: 'x'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', location: 'x'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', location: 'x'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', location: 'x'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', location: 'x'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O', location: 'x'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F', location: 'x'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne', location: 'x'},
-];
+
 
 
 
@@ -30,13 +15,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class NewincidentComponent implements OnInit {
 
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'location'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(private incidentService:IncidentService, private router:Router) { }
   
 
   ngOnInit(): void {
   }
 
+  onSubmit() 
+  {
+  this.incidentService.addNewincident().subscribe(
+    (res:any)=>{
+      this.router.navigateByUrl("/dashboard/incidents");
+      alert('You successfully added new incident!');
+      
+    },
+    err=>{
+      console.log(err);
+      alert('Invalid');
+    }
+  )
 }
+}
+

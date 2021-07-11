@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginUser } from '../entities/loginUser/login-user';
 import { StatusType } from '../entities/user/status-type.enum';
 import { User } from '../entities/user/user';
 import { UserType } from '../entities/user/user-type.enum';
@@ -32,37 +33,56 @@ export class HomeComponent implements OnInit {
 
 
   logIn(temp : NgForm) : void {
-    this.allUsers=this.userService.loadUsers();
-    console.log(this.allUsers);
-
-    this.incorrectly=false;
-    console.log(this.incorrectly);
-  
-
-    for(let i=0; i<this.allUsers.length; i++ ){
-      console.log(this.allUsers[i].email);
-      if(this.allUsers[i].email==temp.value.adresa && this.allUsers[i].password==temp.value.sifra && this.allUsers[i].status!=StatusType.Denied){
-        this.exist=true;
-        this.user=this.allUsers[i];
-        console.log("nasao sam ga "+ this.allUsers[i].email + this.allUsers[i].password);
-        break;
-      }
+    /* this.allUsers=this.userService.loadUsers();
+     console.log(this.allUsers);
+ 
+     this.incorrectly=false;
+     console.log(this.incorrectly);
    
-    }
-
-    if(this.exist && this.user.status==StatusType.Accepted){
-      this.router.navigate(['/','dashboard']);
-    }
-    else if(this.exist && this.user.status==StatusType.Processing){
-      this.router.navigate(['/dashboard/profil'], {relativeTo: this.route});
-      //this.router.navigate([ '../list/view', country.countryId ], { relativeTo: this.route });
-    }
-    else {
-      this.incorrectly=true; //za ispis labele 'neipstavan email...'
-      this.router.navigate(['/','home']);
-      console.log("nema nista" + this.incorrectly);
-
-    }
-  }
-
-}
+ 
+     for(let i=0; i<this.allUsers.length; i++ ){
+       console.log(this.allUsers[i].email);
+       if(this.allUsers[i].email==temp.value.adresa && this.allUsers[i].password==temp.value.sifra && this.allUsers[i].status!=StatusType.Denied){
+         this.exist=true;
+         this.user=this.allUsers[i];
+         console.log("nasao sam ga "+ this.allUsers[i].email + this.allUsers[i].password);
+         break;
+       }
+    
+     }
+ 
+     if(this.exist && this.user.status==StatusType.Accepted){
+       this.router.navigate(['/','dashboard']);
+     }
+     else if(this.exist && this.user.status==StatusType.Processing){
+       this.router.navigate(['/dashboard/profil'], {relativeTo: this.route});
+       //this.router.navigate([ '../list/view', country.countryId ], { relativeTo: this.route });
+     }
+     else {
+       this.incorrectly=true; //za ispis labele 'neipstavan email...'
+       this.router.navigate(['/','home']);
+       console.log("nema nista" + this.incorrectly);
+ 
+     }*/
+    var body:LoginUser=new LoginUser(temp.value.korisnickoIme, temp.value.sifra);
+ 
+    this.userService.logIn(body).subscribe(
+      (res:any)=>
+      {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem("FullName", res.name);
+        localStorage.setItem("Role", res.role);
+        localStorage.setItem("Id", res.userId);
+ 
+        this.router.navigate(['/','dashboard']);
+        alert("Logged in successfully!");
+      },
+      err=>{
+        console.log(err.object);
+        alert(err);
+      }
+    )
+   }
+ 
+ }
+ 

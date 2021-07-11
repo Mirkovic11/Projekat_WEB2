@@ -43,13 +43,13 @@
 
 
                   <div class="row px-3"> <label class="mb-1">
-                          <h6 class="mb-0 text-sm">Email Address</h6>
+                          <h6 class="mb-0 text-sm">User name</h6>
                       </label> 
                       <!-- --------------------------------------------------- -->
-                      <input type="email" id="adresa" name="adresa" ngModel placeholder="Enter email address"
-                      #adresa="ngModel" required>
-                      <div *ngIf="f.submitted && adresa.invalid">
-                          <div>Enter email address</div>
+                      <input type="text" id="korisnickoIme" name="korisnickoIme" ngModel placeholder="Enter username"
+                      #korisnickoIme="ngModel" required>
+                      <div *ngIf="f.submitted && korisnickoIme.invalid">
+                          <div>Enter username</div>
                       </div> 
                    
                       <!-- --------------------------------------------------- -->

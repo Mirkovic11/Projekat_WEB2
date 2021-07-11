@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StatusType } from 'src/app/entities/user/status-type.enum';
 import { User } from 'src/app/entities/user/user';
@@ -8,11 +9,13 @@ import { UserType } from 'src/app/entities/user/user-type.enum';
 })
 export class UserService {
 
+  private baseUrl = "https://localhost:44364/api/Auth/";
   allUsers: Array<User>;
 
-  constructor() {
+  constructor( private http:HttpClient) {
     this.allUsers=new Array<User>();
    }
+
 
 
    loadUsers() : Array<User> {
@@ -52,5 +55,17 @@ export class UserService {
     let korisnik= new User(id,korisnickoIme,sifra,ime,prez,tip,mail,datum,adresa,slika,status);// korisnika treba posle upisati u bazu
     //this.listaKorisnika.push(korisnik);
     return korisnik;
+  }
+
+  registeration(body:any){
+    return this.http.post(this.baseUrl + "Register",body);
+  }
+
+  logIn(body:any){
+    return this.http.post(this.baseUrl + "Login",body);
+  }
+
+  getAllUsers(){
+    return this.http.get(this.baseUrl + "GetAllUsers");
   }
 }

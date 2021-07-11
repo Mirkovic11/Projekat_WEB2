@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Desktop\\web2_projekat\\web2\\Back\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\Korisnik\\Desktop\\web_git\\web2\\Back\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Desktop\\web2_projekat\\web2\\Back\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\Korisnik\\Desktop\\web_git\\web2\\Back\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\web2_projekat\\web2\\Back\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\web_git\\web2\\Back\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\Korisnik\\Desktop\\web2_projekat\\web2\\Back\\WebApp\\WebApp.csproj",
+        "projectPath": "C:\\Users\\Korisnik\\Desktop\\web_git\\web2\\Back\\WebApp\\WebApp.csproj",
         "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Desktop\\web2_projekat\\web2\\Back\\WebApp\\obj\\",
+        "outputPath": "C:\\Users\\Korisnik\\Desktop\\web_git\\web2\\Back\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

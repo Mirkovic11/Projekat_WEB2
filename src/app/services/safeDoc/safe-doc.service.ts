@@ -32,7 +32,10 @@ export class SafeDocService {
      console.log("-----------------");
      console.log(devices)
      console.log("-----------------");
-     var body = {safetyDoc, devices};
+
+      var id=localStorage.getItem("Id");
+      var role= localStorage.getItem("Role")
+     var body = {safetyDoc, devices, id, role};
 
      console.log(body);
 

@@ -8,7 +8,7 @@
       <!--mat-label>Type</mat-label-->
     <mat-form-field>
       <mat-label>Type</mat-label>
-      <mat-select [(ngModel)]="inc.type" >
+      <mat-select [(ngModel)]="incident.type" >
         <mat-option value="Planned">PlannedWork</mat-option>
         <mat-option value="Unplanned">UnplannedWork</mat-option>
       </mat-select>
@@ -20,7 +20,7 @@
     <!--mat-label>Affected costumers</mat-label-->
     <mat-form-field>
       <input matInput type="number" id="customers" min="1" 
-      placeholder="Affected customers" readonly [(ngModel)]="inc.affectedCustomers"/>
+      placeholder="Affected customers" readonly [(ngModel)]="incident.affectedCustomers"/>
   </mat-form-field>   
   </td>
   <td>    
@@ -37,32 +37,32 @@
 <tr>
   <td>  <mat-form-field appearance="outline">
     <mat-label>Priority</mat-label>
-    <input matInput placeholder="Priority" readonly [(ngModel)]="inc.priority">
+    <input matInput placeholder="Priority" readonly [(ngModel)]="incident.priority">
   </mat-form-field>                 
 </td>
 <td>   <mat-form-field appearance="fill">
     <mat-label>ETR</mat-label>
-    <input matInput [matDatepicker]="picker2" [(ngModel)]="inc.etr" required>
+    <input matInput [matDatepicker]="picker2" [(ngModel)]="incident.etr" required>
     <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
     <mat-datepicker #picker2></mat-datepicker>
   </mat-form-field>                  
 </td> 
 
   <td>   
-    <mat-slide-toggle [(ngModel)]="inc.confirmed">Confirmed</mat-slide-toggle>            
+    <mat-slide-toggle [(ngModel)]="incident.confirmed">Confirmed</mat-slide-toggle>            
 </td>
 <td>  
     <mat-form-field>
-        <input matInput type="number" id="calls" min="1" placeholder="Calls" readonly [(ngModel)]="inc.calls"/>
+        <input matInput type="number" id="calls" min="1" placeholder="Calls" readonly [(ngModel)]="incident.calls"/>
     </mat-form-field>             
 </td>
 </tr>
 
 <tr>
-  <td>  Status:  {{inc.status}}            
+  <td>  Status:  {{incident.status}}            
   </td>
   <td><mat-form-field>
-      <input matInput type="number" id="voltage" placeholder="Voltage" [(ngModel)]="inc.voltage"  required min="10"/>
+      <input matInput type="number" id="voltage" placeholder="Voltage" [(ngModel)]="incident.voltage"  required min="10"/>
   </mat-form-field>                
   </td>
 
@@ -72,7 +72,7 @@
   </td>
   <td><mat-form-field appearance="fill">
       <mat-label>Scheduled time</mat-label>
-      <input matInput [matDatepicker]="picker3" [(ngModel)]="inc.scheduledTime" required>
+      <input matInput [matDatepicker]="picker3" [(ngModel)]="incident.scheduledTime" required>
       <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
       <mat-datepicker #picker3></mat-datepicker>
     </mat-form-field>           
@@ -82,14 +82,14 @@
 <tr>
   <td>  <mat-form-field appearance="fill">
     <mat-label>ETA</mat-label>
-    <input matInput [matDatepicker]="picker4" [(ngModel)]="inc.eta" required>
+    <input matInput [matDatepicker]="picker4" [(ngModel)]="incident.eta" required>
     <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
     <mat-datepicker #picker4></mat-datepicker>
   </mat-form-field>                 
   </td>
   <td>   <mat-form-field appearance="fill">
     <mat-label>ATA</mat-label>
-    <input matInput [matDatepicker]="picker5" disabled   [(ngModel)]="inc.ata">
+    <input matInput [matDatepicker]="picker5" disabled   [(ngModel)]="incident.ata">
     <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
     <mat-datepicker #picker5></mat-datepicker>
   </mat-form-field>                

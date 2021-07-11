@@ -1,10 +1,12 @@
-<mat-selection-list #teams [multiple]="false" [(ngModel)]="izabranaEkipa">
-    <mat-list-option *ngFor="let team of ekipa" [value]="team.id">
-      {{team.name }} - {{team.list}}
-    </mat-list-option>
-  </mat-selection-list>
-  
-  <hr>
-  <p style="margin: 10px;">
-   <i> Option selected:  </i> <b>{{teams.selectedOptions.selected[0]?.value}}</b>
-  </p>
+<div class="tabela">
+  <mat-label style="font-size: large; padding: 20px; font-style: normal;">Crew: </mat-label>
+  <mat-form-field appearance="fill">
+  <mat-label>Select Crew</mat-label>
+  <mat-select [(ngModel)]="izabranaEkipa">
+      <mat-option *ngFor="let item of ekipa" [value]="item.id">
+      {{item.name}}
+      </mat-option>
+  </mat-select>
+  </mat-form-field>
+
+</div>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kNeJL9yXAiWnVq05W+Joi4Y8jz9b1PqUSOZx1Ym2HrGKcb7rKvVl5hNp+PyVPWZVFiJyK3YcTzvQD9210dqaNw==",
+  "dgSpecHash": "nE79p+agb01n8Ic1edXYtoxOFF2Hxy96B3+k0VSMBNnHR8vt346f1KHrACMZXtn0MrA/Bam9deyqH/MIFiB7Aw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Korisnik\\Desktop\\web2_projekat\\web2\\Back\\WebApp\\WebApp.csproj",
+  "projectFilePath": "C:\\Users\\Korisnik\\Desktop\\web_git\\web2\\Back\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Korisnik\\.nuget\\packages\\awssdk.core\\3.7.0.26\\awssdk.core.3.7.0.26.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",

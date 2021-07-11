@@ -18,11 +18,14 @@ namespace WebApp.Controllers
   {
 
     private readonly DataDBContext data;
+    private readonly AuthenticationDBContext authentication;
+    private UserManager<User> manager;
 
-
-    public SafetyDocsController( DataDBContext context)
+    public SafetyDocsController(DataDBContext context, AuthenticationDBContext a, UserManager<User> m)
     {
       data = context;
+      authentication = a;
+      manager = m;
     }
 
     [HttpGet]
@@ -52,12 +55,17 @@ namespace WebApp.Controllers
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] SafeteyDocDTO body)
     {
-     
+      // string id = User.Claims.First(x => x.Type == "UserID").Value;
+      //  string role = authentication.Users.FirstOrDefault(x => x.Id == id).Role;
+
+
+      if (body.Role == "Dispatcher")
+      {
         SafetyDoc sDoc = new SafetyDoc();
         sDoc.Type = body.SafetyDoc.Type;
-     // sDoc.WorkPlan = data.WorkPlans.FirstOrDefault(x => x.Id == body.SafetyDoc.WorkPlanId);
+        // sDoc.WorkPlan = data.WorkPlans.FirstOrDefault(x => x.Id == body.SafetyDoc.WorkPlanId);
         sDoc.Status = body.SafetyDoc.Status;
-        sDoc.UserID = "id3";
+        sDoc.UserID = body.Id;
         sDoc.Details = body.SafetyDoc.Details;
         sDoc.Notes = body.SafetyDoc.Notes;
         sDoc.DateCreated = DateTime.Now;
@@ -66,16 +74,21 @@ namespace WebApp.Controllers
         sDoc.GroundingRemoved = body.SafetyDoc.GroundingRemoved;
         sDoc.Ready = body.SafetyDoc.Ready;
 
-        foreach(DeviceDTO item in body.Devices)
+        foreach (DeviceDTO item in body.Devices)
         {
           await data.SafetyDocsDevices.AddAsync(new SafetyDocDevice { SafetyDoc = sDoc, Device = data.Devices.FirstOrDefault(x => x.Name == item.Name) });
         }
         await data.SafetyDocs.AddAsync(sDoc);
         await data.SaveChangesAsync();
         return Ok();
-    
-      
+      }
+      else
+      {
+        return Unauthorized();
+      }
+
     }
+
 
 
     [HttpGet]

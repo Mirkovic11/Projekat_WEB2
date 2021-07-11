@@ -23,5 +23,10 @@ export class DeviceService {
   getDeviceByName(name:string){
     return this.http.get(this.baseUrl+"GetDeviceByName/"+name);
   }
+
+  getNextId(type:string){
+    return this.http.get(this.baseUrl + type);
+  }
+
   
 }
