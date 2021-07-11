@@ -1129,3 +1129,4 @@ C:\Users\Korisnik\Desktop\web2_projekat\web2\Back\WebApp\obj\Debug\net5.0\WebApp
 C:\Users\Korisnik\Desktop\web2_projekat\web2\Back\WebApp\obj\Debug\net5.0\ref\WebApp.dll
 C:\Users\Korisnik\Desktop\web2_projekat\web2\Back\WebApp\obj\Debug\net5.0\WebApp.pdb
 C:\Users\Korisnik\Desktop\web2_projekat\web2\Back\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
+C:\Users\User\Desktop\p\web2\Back\WebApp\obj\Debug\net5.0\WebApp.pdb

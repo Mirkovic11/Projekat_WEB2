@@ -1,0 +1,31 @@
+.sadrzaj
+{
+    width: 650px;
+    height: 900px;
+    background-color: white;
+    float:center;
+    margin-top: 50px;
+    margin-left: 500px;  /* stavi 500 da bude desno*/
+   
+}
+td {
+    text-align: center;
+    padding:5px;
+  }
+
+.tabela
+{
+    width: 650px;
+    height: 750px;
+}
+
+.ikonice
+{
+    float:right;
+    
+}
+.komp
+{
+    color:black;
+    align-self: center;
+}

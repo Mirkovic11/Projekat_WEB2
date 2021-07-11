@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CallComponent } from './dashboard/call/call.component';
+import { ConsumerComponent } from './dashboard/consumer/consumer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IncidentsComponent } from './dashboard/incidents/incidents.component';
 import { MainComponent } from './dashboard/main/main.component';
 import { MapComponent } from './dashboard/map/map.component';
 import { MyincidentsComponent } from './dashboard/myincidents/myincidents.component';
 import { MysafetydocsComponent } from './dashboard/mysafetydocs/mysafetydocs.component';
+import { NewWorkplanComponent } from './dashboard/new-workplan/new-workplan.component';
+import { NewconsumerComponent } from './dashboard/newconsumer/newconsumer.component';
 import { AddNewDeviceComponent } from './dashboard/newdevice/addnewdevice/add-new-device/add-new-device.component';
 import { NewDeviceComponent } from './dashboard/newdevice/new-device/new-device.component';
 import { BasicinfoComponent } from './dashboard/newincident/basicinfo/basicinfo.component';
@@ -22,6 +25,10 @@ import { NewsafetydocComponent } from './dashboard/newsafetydoc/newsafetydoc.com
 import { NotificationsComponent } from './dashboard/notifications/notifications.component';
 import { ProfileRegisteredUsersComponent } from './dashboard/profile-registered-users/profile-registered-users.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
+import { SettingsComponent } from './dashboard/settings/settings.component';
+import { WorkplanBasicinfoComponent } from './dashboard/workplan-basicinfo/workplan-basicinfo.component';
+import { WorkplanEquipmentComponent } from './dashboard/workplan-equipment/workplan-equipment.component';
+import { WorkplansComponent } from './dashboard/workplans/workplans.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 
@@ -34,6 +41,15 @@ const routes: Routes = [
       {path: 'main', component: MainComponent},
       {path: 'notifications', component: NotificationsComponent},
       {path: 'myincidents', component: MyincidentsComponent},
+      {path: 'work-plans', component: WorkplansComponent},
+      {path: 'work-plans/new-work-plan' , component: NewWorkplanComponent, children:
+      [
+        { path: 'work-plan-basic-info', component: WorkplanBasicinfoComponent},
+        { path: 'work-plan-equipment', component: WorkplanEquipmentComponent}
+      ]},
+      {path: 'settings', component: SettingsComponent},
+      {path: 'consumer', component: ConsumerComponent},
+      {path: 'consumer/newconsumer', component: NewconsumerComponent},
       {path: 'map', component: MapComponent},
       {path: 'profile', component: ProfileComponent,
         children: 

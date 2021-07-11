@@ -72,6 +72,14 @@ import { DeviceModalComponent } from './dashboard/newsafetydoc/deviceModal/devic
 import { ToastrModule } from 'ngx-toastr';
 import { NewDeviceComponent } from './dashboard/newdevice/new-device/new-device.component';
 import { AddNewDeviceComponent } from './dashboard/newdevice/addnewdevice/add-new-device/add-new-device.component';
+import { ConsumerComponent } from './dashboard/consumer/consumer.component';
+import { NewconsumerComponent } from './dashboard/newconsumer/newconsumer.component';
+import { SettingsComponent } from './dashboard/settings/settings.component';
+import { WorkplansComponent } from './dashboard/workplans/workplans.component';
+import { NewWorkplanComponent } from './dashboard/new-workplan/new-workplan.component';
+import { WorkplanBasicinfoComponent } from './dashboard/workplan-basicinfo/workplan-basicinfo.component';
+import { WorkplanEquipmentComponent } from './dashboard/workplan-equipment/workplan-equipment.component';
+import { WorkplanHistoryComponent } from './dashboard/workplan-history/workplan-history.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +112,15 @@ import { AddNewDeviceComponent } from './dashboard/newdevice/addnewdevice/add-ne
     EquipmentdocComponent,
     DeviceModalComponent,
     NewDeviceComponent,
-    AddNewDeviceComponent
+    AddNewDeviceComponent,
+    ConsumerComponent,
+    NewconsumerComponent,
+    SettingsComponent,
+    WorkplansComponent,
+    NewWorkplanComponent,
+    WorkplanBasicinfoComponent,
+    WorkplanEquipmentComponent,
+    WorkplanHistoryComponent
   
 
   ],

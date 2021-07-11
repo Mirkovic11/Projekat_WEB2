@@ -1,0 +1,90 @@
+<div class="sadrzaj">  
+    <table class="tabela">
+        <tr>
+            <td>
+              <p>Name:</p>
+            </td>
+            
+            <td>
+              <p>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" [(ngModel)] = "consumer.name" required>
+                  </mat-form-field>
+                </p>
+              
+            </td>
+            </tr>
+            <tr>
+                <td>
+                  <p>Surname:</p>
+                </td>
+                
+                <td>
+                  <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Surname</mat-label>
+                        <input matInput placeholder="Surname" [(ngModel)] = "consumer.surname" required>
+                      </mat-form-field>
+                    </p>
+                  
+                </td>
+                </tr>
+    
+
+                <tr>
+                    <td>
+                      <p>Adress:</p>
+                    </td>
+              
+              
+                    <td>
+                      <div> 
+                        <p> 
+                          <mat-form-field appearance="fill">
+                            <mat-label>Select Address</mat-label>
+                            <mat-select [(ngModel)]="consumer.street">
+                              <mat-option *ngFor="let item of streets" [value]="item.name" >
+                                {{item.name}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+
+
+                <tr>
+                    <td>
+                      <p>Phone:</p>
+                    </td>
+                    
+                    <td>
+                      <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone" [(ngModel)] = "consumer.phone" required>
+                          </mat-form-field>
+                        </p>
+                      
+                    </td>
+                    </tr>
+                <tr>
+                    <td> Type:</td>
+                    <td>
+                      <mat-form-field>
+                        <mat-select [(ngModel)]="consumer.type" >
+                          <mat-option value="residental">Residental</mat-option>
+                          <mat-option value="commercial">Commercial</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+
+
+  </table>
+  <button class="btn-regular" (click)="onSubmit()">      
+    <mat-icon>save</mat-icon>Save 
+</button>
+</div>

@@ -1,0 +1,10 @@
+.sadrzaj
+{   margin-top: 50px;
+    display: grid;
+    place-items: center;   
+    position: fixed;  
+    left: 50%;
+    transform: translate(-50%, -10%);   
+    background-color: white;
+    font-weight: bold;
+}

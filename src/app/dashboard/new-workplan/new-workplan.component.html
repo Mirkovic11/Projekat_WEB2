@@ -1,0 +1,23 @@
+<div class="meni">
+    <div class="sadrzaj">
+                <ul class="sidebar-menu__top__links">
+                    <li>
+                        <a routerLink="work-plan-basic-info">
+                            
+                            <div class="triger"><span>Basic Information</span></div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a routerLink="work-plan-equipment">
+                            <div class="triger"><span>Equipment</span></div>
+                        </a>
+                    </li>                                             
+                </ul>
+                
+                <button class="btn-regular" (click)="onSubmit()">      
+                    <mat-icon>save</mat-icon>Save 
+            </button>
+    </div>
+</div>
+<div><router-outlet></router-outlet></div>

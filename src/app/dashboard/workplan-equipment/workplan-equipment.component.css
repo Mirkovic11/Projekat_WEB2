@@ -1,0 +1,32 @@
+.tabelaa
+{
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    float:center;
+    margin-top: 100px;
+    margin-left: 500px;  /* stavi 500 da bude desno*/
+   
+}
+table
+{
+  width: 500px;
+    height: 250px;
+}
+th
+{
+  text-align: center;
+}
+td{
+  text-align: center;
+  padding: 5px;
+}
+.ikonice
+{
+    float:right;
+}
+.btn-regular
+{
+  margin-right: 20px;
+  margin-left:10px
+}

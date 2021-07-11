@@ -1,1 +1,66 @@
-<p>notifications works!</p>
+
+    <div class="meni">
+        <div class="sadrzaj">
+                    <ul class="sidebar-menu__top__links">
+                        <li>
+                            <a routerLink="notifications-all">
+                                
+                                <div class="triger"><span>All notifications</span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="incident-devices" >
+                                <div class="triger"><span>Unread notifications</span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="incident-resolution">
+                                <div class="triger"><span>Errors</span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="incident-calls">
+                                <div class="triger"><span>Info</span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="incident-crew">
+                                <div class="triger"><span>Success</span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="incident-multimedia">
+                                <div class="triger"><span>Warnings</span></div>
+                            </a>
+                        </li>                   
+                    </ul>
+        </div>
+    </div>
+   
+    <div class="notifications">
+        <mat-card class="example-card" style="background-color: rgb(22, 122, 22); color: white;">
+            <mat-card-header>
+              <div mat-card-avatar ><i class="fas fa-check-circle" style="color: white;"></i></div>
+              <mat-card-title>You logged in</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="example-card" style="background-color: rgb(22, 122, 22); color: white;">
+            <mat-card-header>
+              <div mat-card-avatar ><i class="fas fa-check-circle" style="color: white;"></i></div>
+              <mat-card-title>You successfully added new ...</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        
+        <mat-card class="example-card" style="background-color: rgb(223, 19, 19); color: white;">
+            <mat-card-header>
+              <div mat-card-avatar ><i class="fas fa-times-circle" style="color: white; "></i></div>
+              <mat-card-title>Invalid</mat-card-title>
+            </mat-card-header>
+          </mat-card>     
+          <mat-card class="example-card" style="background-color:rgb(139, 168, 253); color: white;">
+            <mat-card-header>
+              <div mat-card-avatar ><i class="fas fa-info-circle" style="color:white;"></i></div>
+              <mat-card-title>Name refreshed</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>

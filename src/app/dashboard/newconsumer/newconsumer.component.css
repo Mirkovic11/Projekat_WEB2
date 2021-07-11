@@ -1,0 +1,37 @@
+.sadrzaj
+{
+    width: 650px;
+    height: 550px;
+    background-color: white;
+    float:center;
+    margin-top: 50px;
+    margin-left: 500px;  /* stavi 500 da bude desno*/
+   
+}
+td {
+    text-align: center;
+    padding:5px;
+  }
+
+.tabela
+{
+    font-weight: bold;
+    width: 650px;
+    height: 450px;
+}
+
+.ikonice
+{
+    float:right;
+    
+}
+.komp
+{
+    color:black;
+    align-self: center;
+}
+.btn-regular
+{
+    margin-left: 330px;
+    margin-top: 10px;
+}

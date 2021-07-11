@@ -1,0 +1,161 @@
+<div class="sadrzaj">  
+    <table class="tabela">
+  <tr>
+    <td> Type:</td>
+    <td>
+      <mat-form-field>
+        <mat-select [(ngModel)]="plan.type">
+          <mat-option value="planned">PlannedWork</mat-option>
+          <mat-option value="unplanned">UnplannedWork</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Work order:
+    </td>
+    <td>
+      <mat-form-field appearance="fill">
+        <mat-select [(ngModel)] = "plan.workOrderId">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr class="komp">
+
+    <td>  Status:  DRAFT            
+    </td>
+</tr>
+<tr>
+    <td>
+      <p>Adress:</p>
+    </td>
+
+
+    <td>
+      <div> 
+        <p> 
+          <mat-form-field appearance="fill">
+            <mat-label>Select Address</mat-label>
+            <mat-select [(ngModel)]="selectedStreet">
+              <mat-option *ngFor="let item of streets" [value]="item.name">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Crew:</p>
+    </td>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select Crew</mat-label>
+      <mat-select >
+          <mat-option *ngFor="let item of crews" [value]="item.id">
+          {{item.name}}
+          </mat-option>
+      </mat-select>
+      </mat-form-field>
+  </tr>
+  <tr class="komp">
+
+    <td>
+      <p>Start date:</p>
+    </td>
+
+    <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <input matInput [matDatepicker]="picker2" [(ngModel)] = "plan.startTime" required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+    </td>
+    </tr>
+    <tr>
+      <td>
+        <p>End date</p>
+      </td>
+
+      <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <input matInput [matDatepicker]="picker3" [(ngModel)] = "plan.endTime" required>
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+      </td>
+    </tr>
+<tr>
+<td>
+  <p>Date created:</p>
+</td>
+<mat-label> {{date}} </mat-label>  
+</tr>
+<tr>
+<td>
+  Created by:
+</td>
+<td>
+  <mat-label> {{Ime}} </mat-label>
+</td>
+</tr>
+
+<tr>
+<td>
+  <p>Company:</p>
+</td>
+
+<td>
+  <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+        <input matInput placeholder="ex. Apple" [(ngModel)] = "plan.company" required>
+      </mat-form-field>
+    </p>
+  
+</td>
+</tr>
+
+
+<tr>
+<td>
+  <p>Reason:</p>
+</td>
+
+<td>
+  <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Reason</mat-label>
+        <input matInput placeholder="Reason" [(ngModel)] = "plan.purpose" required>
+      </mat-form-field>
+    </p>
+  
+</td>
+</tr>
+<tr>
+<td>
+  Notes:
+</td>
+<td>
+  <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Notes</mat-label>
+        <input matInput placeholder="notes" [(ngModel)] = "plan.notes" required>
+      </mat-form-field>
+    </p>
+  
+</td>
+</tr>
+
+  </table>
+</div>
