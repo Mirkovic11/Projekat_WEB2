@@ -16,7 +16,7 @@ namespace WebApp.DTOs
       get { return type; }
       set { type = value; }
     }
-
+    [Required]
     private bool confirmed;
 
     public bool Confirmed
@@ -43,7 +43,7 @@ namespace WebApp.DTOs
       set { eta = value; }
     }
 
-
+    
     private DateTime ata;
 
     public DateTime ATA

@@ -61,6 +61,7 @@ namespace WebApp.DTOs
       set { dateCreated = value; }
     }
 
+    [Required]
     private bool operationsCompleted;
 
     public bool OperationsCompleted
@@ -69,6 +70,7 @@ namespace WebApp.DTOs
       set { operationsCompleted = value; }
     }
 
+    [Required]
     private bool tagsRemoved;
 
     public bool TagsRemoved
@@ -77,6 +79,7 @@ namespace WebApp.DTOs
       set { tagsRemoved = value; }
     }
 
+    [Required]
     private bool groundingRemoved;
 
     public bool GroundingRemoved
@@ -85,6 +88,7 @@ namespace WebApp.DTOs
       set { groundingRemoved = value; }
     }
 
+    [Required]
     private bool ready;
 
     public bool Ready

@@ -89,5 +89,8 @@ namespace WebApp.Controllers
       string povratnaVr = (type.Substring(0, 3)).ToUpper() + id.ToString();
       return Ok(new { newId = povratnaVr });
     }
+
+    
+
   }
 }

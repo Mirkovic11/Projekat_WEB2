@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CallComponent } from './dashboard/call/call.component';
+import { ChangeStateComponent } from './dashboard/changestatedoc/change-state/change-state.component';
 import { ConsumerComponent } from './dashboard/consumer/consumer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IncidentsComponent } from './dashboard/incidents/incidents.component';
@@ -36,7 +37,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'dashboard', component: DashboardComponent, 
+  {path: 'dashboard', component: DashboardComponent,
     children: [
       {path: 'main', component: MainComponent},
       {path: 'notifications', component: NotificationsComponent},
@@ -81,7 +82,8 @@ const routes: Routes = [
       {path: 'call', component: CallComponent},
       {path: 'proba', component: MyincidentsComponent},
       {path: 'devices', component: NewDeviceComponent},
-      {path: 'devices/newDevice', component: AddNewDeviceComponent}
+      {path: 'devices/newDevice', component: AddNewDeviceComponent},
+      {path: 'changeState', component:ChangeStateComponent}
      
       //{path: 'registeredUsers', component: ProfileRegisteredUsersComponent},
      

@@ -81,6 +81,8 @@ import { WorkplanBasicinfoComponent } from './dashboard/workplan-basicinfo/workp
 import { WorkplanEquipmentComponent } from './dashboard/workplan-equipment/workplan-equipment.component';
 import { WorkplanHistoryComponent } from './dashboard/workplan-history/workplan-history.component';
 import { CallModalComponent } from './dashboard/call/modal/call-modal/call-modal.component';
+import { ChangeStateComponent } from './dashboard/changestatedoc/change-state/change-state.component';
+
 
 @NgModule({
   declarations: [
@@ -122,7 +124,9 @@ import { CallModalComponent } from './dashboard/call/modal/call-modal/call-modal
     WorkplanBasicinfoComponent,
     WorkplanEquipmentComponent,
     WorkplanHistoryComponent,
-    CallModalComponent
+    CallModalComponent,
+    ChangeStateComponent,
+
   
 
   ],

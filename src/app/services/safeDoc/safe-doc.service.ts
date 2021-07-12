@@ -49,4 +49,10 @@ export class SafeDocService {
    getSDIds() {
      return this.http.get(this.baseUrl + "GetSafetyDocIds");
    }
+
+   
+  changeState(id:number,status:string){
+    var body = {id,status}
+    return this.http.patch(this.baseUrl + 'ChangeState',body )
+  }
 }

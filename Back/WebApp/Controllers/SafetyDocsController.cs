@@ -104,6 +104,24 @@ namespace WebApp.Controllers
       return Ok(new { lista });
     }
 
-  }
+    [HttpPatch]
+    [Route("ChangeState")]
+    public async Task<IActionResult> ChangeState([FromBody] StateDTO body)
+    {
+        foreach(SafetyDoc item in data.SafetyDocs)
+      {
+        if (item.Id == body.Id)
+        {
+          item.Status = body.Status;
+          data.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+          break;
+        }
+      }
+      await data.SaveChangesAsync();
+      return Ok();
+    }
+
+
+    }
 
 }

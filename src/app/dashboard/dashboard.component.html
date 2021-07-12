@@ -1,7 +1,7 @@
 <mat-sidenav-container class="example-container" >
     <mat-sidenav mode="side" opened>
         <mat-nav-list>
-            <div><img src="../../assets/search.png"/> <p>SEARCH</p> </div>
+            <div [routerLink]="'changeState'"><mat-icon>history</mat-icon> <p>HISTORY</p> </div>
             <div [routerLink]="'main'"><img src="../../assets/home.png"/> <p>MAIN</p> </div>
             <div [routerLink]="'notifications'"><img src="../../assets/news.png"/> <p>NOTIFICATIONS</p> </div>
             <div [routerLink]="'map'"><img src="../../assets/map.png"/> <p>MAP</p> </div>
@@ -9,6 +9,7 @@
             <div [routerLink]="'devices'"><img src="../../assets/socket.png"/> <p>ADD ELEMENT</p> </div>
             <div><img src="../../assets/addteam.png"/> <p>ADD TEAM</p> </div>
             <div [routerLink]="'consumer'"><img src="../../assets/add.png"/> <p>ADD CONSUMER</p> </div>
+            <div [routerLink]="'call'"><mat-icon style="margin: 5px; height: 20px;">call</mat-icon><p>CALL</p> </div> 
             <div [routerLink]="'settings'" ><img src="../../assets/settings.png"/> <p>SETTINGS</p> </div>
             <div [routerLink]="''" ><img src="../../assets/logout.png"/>  <p>LOG OUT</p>  </div>      
             <div [routerLink]="'profile'"><img src="../../assets/search.png"/><p>PROFILE</p> </div> 

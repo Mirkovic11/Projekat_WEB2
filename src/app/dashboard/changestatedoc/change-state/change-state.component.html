@@ -1,0 +1,61 @@
+<mat-toolbar>
+    
+    <span>New element</span>
+   
+</mat-toolbar>
+
+
+<div >
+<table>
+    <tr>
+
+        <td>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Select element</mat-label>
+                    <mat-select [(ngModel)]="selectedElement">
+                        <mat-option value="SafetyDoc">Safety Doc</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+            </div>
+        </td>
+
+
+<td>
+    <div>
+        <mat-form-field appearance="fill">
+        <mat-label>Select Safety Doc</mat-label>
+        <mat-select [(ngModel)]="selectedSafeDoc">
+            <mat-option *ngFor="let item of safeDocs" [value]="item">
+            {{item}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+    </div>
+</td>
+
+<td>
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Select Status</mat-label>
+        <mat-select [(ngModel)]="selectedSafeDocState">
+            <mat-option value="Issued">Issued</mat-option>
+            <mat-option value="Canceled">Canceled</mat-option>
+          </mat-select>
+    </mat-form-field>
+</div>
+</td>
+
+
+    <td>
+        <div class="dugme">
+            <button style="float: right;" mat-raised-button color="primary" (click)="submit()">
+              Save
+              <mat-icon>save</mat-icon>
+            </button>
+    </div>
+</td>
+  </tr>
+</table>
+</div>
+

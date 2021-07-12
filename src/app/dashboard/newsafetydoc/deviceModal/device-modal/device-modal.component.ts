@@ -62,7 +62,9 @@ export class DeviceModalComponent implements OnInit {
               if(value1.name === value.name){
                 oke = false;
                 console.log("fasle");
-              }
+              }/*else {
+                povratnaVr.push(value);
+              }*/
             })
             if(oke === true){
               povratnaVr.push(value);

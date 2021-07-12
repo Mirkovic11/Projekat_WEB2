@@ -1,0 +1,29 @@
+.klasa
+{   margin-top: 50px;
+    display: grid;
+    place-items: center;   
+    position: fixed;  
+    left: 50%;
+    transform: translate(-50%, -10%);   
+    background-color: white;
+    font-weight: bold;
+}
+
+div{
+    margin:12px;
+    padding:12px;
+}
+
+td{
+    margin:15px;
+    padding:15px;
+    display: inline-block;
+}
+
+.dugme{
+    width: 50%;
+    margin-left:12px;
+    padding:12px;
+    display: inline-block;
+  }
+ 
