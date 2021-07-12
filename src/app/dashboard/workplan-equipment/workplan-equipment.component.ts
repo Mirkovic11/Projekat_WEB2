@@ -7,6 +7,7 @@ import { Device } from 'src/app/entities/device/device';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { PlanService } from 'src/app/services/plan/plan.service';
 import { DeviceModalComponent } from '../newsafetydoc/deviceModal/device-modal/device-modal.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-workplan-equipment',
@@ -22,7 +23,7 @@ export class WorkplanEquipmentComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public dialog: MatDialog, private planService:PlanService, private deviceService:DeviceService/*, private toastr: ToastrService*/) {
+  constructor(public dialog: MatDialog, private planService:PlanService, private deviceService:DeviceService, private toastr: ToastrService) {
     this.dataSource = new MatTableDataSource();
   }
 

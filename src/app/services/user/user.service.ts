@@ -72,4 +72,14 @@ export class UserService {
   getUserByName(name:string) {
     return this.http.get(this.baseUrl+"GetUserByName/"+name);
   }
+
+  getProfile(){
+    return this.http.get(this.baseUrl + "GetProfile");
+  }
+
+  editProfile(body:any, curPass:string){
+    var currentPassword:string = curPass;
+    console.log({body , currentPassword });
+    return this.http.post(this.baseUrl + "EditProfile", {body , currentPassword });
+  }
 }

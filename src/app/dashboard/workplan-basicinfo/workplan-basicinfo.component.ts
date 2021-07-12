@@ -5,6 +5,8 @@ import { Incident } from 'src/app/entities/incident/incident';
 import { Street } from 'src/app/entities/street/street';
 import { WorkPlans } from 'src/app/entities/workplan/workplan';
 import { PlanService } from 'src/app/services/plan/plan.service';
+import { StreetService } from 'src/app/services/street/street.service';
+import { TeamService } from 'src/app/services/team/team.service';
 
 @Component({
   selector: 'app-workplan-basicinfo',
@@ -24,9 +26,9 @@ export class WorkplanBasicinfoComponent implements OnInit {
   public inc!:Incident
   public plan!:WorkPlans
   
-    constructor(/*private streetService:StreetService, private teamService:TeamService,*/ private planService: PlanService) { 
+    constructor(private streetService:StreetService, private teamService:TeamService, private planService: PlanService) { 
 
-      /*this.selectedCrew = planService.currentCrew;    //ovo provjeriti    
+      //this.selectedCrew = planService.currentCrew;    //ovo provjeriti    
       this.plan = planService.currentPlan;
 
       teamService.getCrews().subscribe(
@@ -46,7 +48,7 @@ export class WorkplanBasicinfoComponent implements OnInit {
         err=>{
           console.log(err);
         }
-      )*/
+      )
     }
   
     ngOnInit(): void {

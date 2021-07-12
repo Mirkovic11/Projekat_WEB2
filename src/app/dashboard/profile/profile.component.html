@@ -1,123 +1,93 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
-  
-
-<hr>
-<div class="container bootstrap snippet">
-  
-    <div class="row">
-  		<div class="col-sm-3"><!--left col-->
-              
-
-        <div class="text-center">
-          <img src="{{korisnik.image}}" class="avatar img-circle img-thumbnail" alt="avatar">
-          <h6>Upload a different photo...</h6>
-          <input type="file" class="text-center center-block file-upload"  name="image" id="image">
-        </div><br>
-      </div><!--/col-3-->
+<div class="registration" >
    
-    	<div class="col-sm-9">
-            
-          <div class="tab-content">
-            <div class="tab-pane active" id="home">
-                
-                <form class="form"[formGroup]="courseForm" (ngSubmit)="sacuvaj()">
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="firstName" id="firstName" formControlName="firstName" >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="lastName"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="lastName" id="lastName"  formControlName="lastName" >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                              <label for="userName"><h4>User name</h4></label>
-                              <input type="text" class="form-control" name="userName" id="userName"  readonly="readonly" formControlName="userName" >
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                             <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" id="email"  formControlName="email" >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="birth"><h4>Date of birth</h4></label>
-                              <input type="datetime" class="form-control"  id="birth" formControlName="birth" >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="address"><h4>Address</h4></label>
-                              <input type="text" class="form-control" id="address"  formControlName="address" >
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                        <div class="col-xs-6">
-                            <label for="status"><h4>Status</h4></label>
-                            <input type="text" class="form-control" id="status"  formControlName="status" >
-                        </div>
-                      </div>
-                    
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="type"><h4>Type</h4></label>
-                              <select  class="form-control" name="type" id="type" style="height: 35px;"  formControlName="type" >
-                                  <option [value]="korisnik.type">{{listaTipova[0]}}</option>
-                                  <option *ngFor="let option of listaTipova | slice:1" [value]="option">{{option}}</option>
-                                  <!--LIST - definisana u onInit() u .ts, sa [value] pristupamo izabranom el select liste-->
-                              </select>
-                           </div>
-                      </div>
-                      <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                              	<button  class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                               	<!--button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button-->
-                            </div>
-                      </div>
-              
-              
-              <hr>
-              
-            </form>
+  <div class="column">
+      <h3>Change account info</h3>
+      <form [formGroup]="registerForm">
+      
+      
+          <div class="registration-first_name">
+              <input type="text" placeholder="First Name" formControlName="firstName">
+              <div *ngIf="registerForm.controls.firstName.invalid">
+                  Please enter valid username
+              </div>
+          </div> 
+
+          <div class="registration-last_name">
+              <input type="text" placeholder="Last Name" formControlName="lastName">
+              <div *ngIf="registerForm.controls.lastName.invalid">
+                  Please enter valid username
+              </div>
           </div>
-        </div>
-            
 
-      </div><!--/col-9-->
-   
-  </div><!--/row-->
-  <router-outlet></router-outlet>
+          <div class="registration-address">
+              <input type="text" placeholder="Address" formControlName="address">
+              <div *ngIf="registerForm.controls.address.invalid">
+                  Please enter valid username
+              </div>
+          </div>
+          
+          <div class="registration-username">          
+              <input type="text" placeholder="Username" formControlName="username">
+              <div *ngIf="registerForm.controls.username.invalid">
+                  Please enter valid username
+              </div>
+          </div>
 
-  <div [routerLink]="'registeredUsers'"><img src="../../assets/search.png"/><p>PROFILE</p> </div> 
+          <div class="registration-email">
+              <input type="text" placeholder="Email" formControlName="email">
+              <div *ngIf="registerForm.controls.email.invalid">
+                  Please enter valid username
+              </div>
+          </div>
+
+          <div class="registration-password">
+              <input type="password" placeholder="New Password" formControlName="password">
+              <div *ngIf="registerForm.controls.password.invalid">
+                  Please enter valid password
+              </div>
+          </div>
+
+          <div class="registration-password">
+              <input type="password" placeholder="Old Password" formControlName="repeat">
+              <div *ngIf="registerForm.controls.repeat.invalid">
+                  Please enter valid username
+              </div>
+          </div>        
+      
+          <div class="registration-date">
+              <input type="date" formControlName="date">
+              <div *ngIf="registerForm.controls.date.invalid">
+                  Please enter valid username
+              </div>
+          </div>
+      </form>
+
+      <div>
+          <mat-form-field appearance="fill">
+              <mat-label>Select Role</mat-label>
+              <mat-select [(ngModel)]="selectedRole">
+                  <mat-option value="Dispatcher">Dispatcher</mat-option>
+                  <mat-option value="Crew Member">Crew Member</mat-option>
+                  <mat-option value="Worker">Worker</mat-option>
+              </mat-select>
+              </mat-form-field>
+      </div>
+
+      <div *ngIf="selectedRole=='Crew Member'">
+          <mat-form-field appearance="fill">
+          <mat-label>Select Crew</mat-label>
+          <mat-select [(ngModel)]="selectedCrew">
+              <mat-option *ngFor="let item of crews" [value]="item.id">
+              {{item.name}}
+              </mat-option>
+          </mat-select>
+          </mat-form-field>
+      </div>
+
+      <div class="registration-submit">
+          <button mat-button (click)="onSubmit()" >Change</button>
+      </div>
+                
+  </div>
+  
 </div>

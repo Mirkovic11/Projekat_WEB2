@@ -1,10 +1,81 @@
-label {
-    margin-top: 5%;
+
+.registration
+{   
+    width: 500px; 
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    line-height: 50px;
+    align-self: center;
+    border-radius: 25px;
+    flex-direction: column;
+    float:center;
+    margin-top: 50px;
+    margin-left: 500px;  /* stavi 500 da bude desno*/
+   
 }
 
-input {
-    margin-top: 0%;
+/*type*/
+input[type="text"]
+{
+    width:400px;
+    height: 30px; 
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #c8d8d8;
+    background: transparent; 
+    font-weight: bold;   
 }
-button {
-    float:right;
+
+input[type="password"]
+{
+    width:400px;
+    height: 30px;  
+    color: #000000; 
+    border: none;
+    border-bottom: 1px solid #c8d8d8;
+    background: transparent; 
+    font-weight: bold;
 }
+
+input[type="date"]
+{
+    width:400px;
+    height: 30px;   
+    border: none;
+    color: #000000;
+    border-bottom: 1px solid #d8d8c8;
+    background: transparent;
+    font-weight: bold;    
+}
+
+button[type="register"]
+{
+    width:200px;
+    height: 30px; 
+    background-color: #6c6d6c;
+    color: white;
+    cursor: pointer;  
+}
+
+
+.column {   
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    background: #5f615e;
+    color: #252525;       
+}
+  
+.login
+{
+    background: #07171e;
+}
+::placeholder
+{
+    color:black;
+}
+
+
+
+

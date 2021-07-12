@@ -30,4 +30,8 @@ export class StreetService {
   getPriorityForCall(street:string){
     return this.http.get(this.baseUrl + "GetPriorityForCall/"+street);
   }
+
+  getStreets(){
+    return this.http.get(this.baseUrl);
+  }
 }
