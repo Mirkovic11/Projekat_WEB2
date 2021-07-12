@@ -31,7 +31,21 @@ namespace WebApp.Controllers
       manager = u;
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Call2DTO body)
+    {
+      Call call = new Call();
+      call.Comment = body.Call.Comment;
+      call.Reason = body.Call.Reason;
+      call.Hazard = body.Call.Hazard;
+      call.Street = data.Streets.FirstOrDefault(x => x.Name == body.Call.Street);
+      call.UserID = body.Id;
 
+      data.Calls.Add(call);
+      await data.SaveChangesAsync();
+      return Ok();
+
+    }
     [HttpPost]
     [Route("GetCallsForDevices")]
     public IActionResult GetCallsForDevices(DeviceDTO[] body)

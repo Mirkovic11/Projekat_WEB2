@@ -12,7 +12,7 @@ export class CallService {
 
   constructor(private http:HttpClient) { }
 
-  addNewCall(body:Call){
+  addNewCall(body:any){
     return this.http.post(this.baseUrl, body);
   }
 

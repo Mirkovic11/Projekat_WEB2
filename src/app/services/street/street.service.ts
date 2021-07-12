@@ -26,4 +26,8 @@ export class StreetService {
   getPriority(body:Device[]) {
     return this.http.post(this.baseUrl + "GetPriority", body);
   }
+
+  getPriorityForCall(street:string){
+    return this.http.get(this.baseUrl + "GetPriorityForCall/"+street);
+  }
 }

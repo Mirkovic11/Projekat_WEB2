@@ -1,5 +1,5 @@
 <div class="container">
-    <form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm">
+    <form  #f="ngForm">
        
         
         <div class="row">
@@ -8,14 +8,13 @@
             </div>
       
         <div class="col-75">
-            <select name="reason" id="reason" ngModel required>
-                <option value="struja">Nema struje</option>
-                <option value="kvar">Postoji kvar</option>
-                <option value="treptanje">Treptanje svjetla</option>
-                <option value="povratak">Povratak struje</option>
-                <option value="djelimicna">Djelimicna struja</option>
-                <option value="napon">Problemi sa naponom</option>
-            </select>
+          <select name="reason" id="reason" ngModel required>
+            <option value="Outage">Outage</option>
+            <option value="Hazard">Hazard</option>
+            <option value="Blinking Light">Blinking light</option>
+            <option value="Power Restored">Power restored</option>
+            <option value="Voltage Problems">Voltage problems</option>
+        </select>
         </div>
         </div>
 
@@ -35,11 +34,11 @@
 
     <div class="row">
         <div class="col-25">
-             <label>Hazzard: </label>
+             <label>Hazard: </label>
         </div>
   
     <div class="col-75">
-        <input type="text" id="hazzard" name="hazzard" ngModel #hazzard="ngModel" required>
+        <input type="text" id="hazard" name="hazard" ngModel #hazzard="ngModel" required>
         <div *ngIf="f.submitted && hazzard.invalid">
             <div>Unesite email adresu</div>
         </div>
@@ -55,7 +54,7 @@
     <label style="float: left;"><p>Costumer info</p></label>
 
     <label style=" float: right;">Select costumer 
-       <button class="select" (click)="triggerModal(modalData)"> 
+       <button class="select" (click)="openDialog()"> 
         
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -80,19 +79,16 @@
             <tr>
                 <td>Name:</td>
                 <td>Last Name: </td>
-                <td>Address:</td>                
-                <td>Account:</td>                
+                <td>Address:</td>                                
                 <td>Priority:</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{korisnik.firstName}}</td>
-                <td>{{korisnik.lastName}}</td>
-                <td>{{korisnik.type}}</td>
-                <td>{{korisnik.status}}</td>
-                <td>{{korisnik.email}}</td>
-                
+                <td>{{korisnik.username}}</td>
+                <td>{{korisnik.fullName}}</td>
+                <td>{{korisnik.street}}</td>
+                <td>{{prioritet}}</td>               
             </tr>
         </tbody>
     </table>
@@ -101,7 +97,7 @@
 <br/>
 <div class="row">
 
-  <button class="btn" [disabled]="!f.form.valid" type="submit">Submit</button>
+  <button class="btn" [disabled]="!f.form.valid" (click)="submit(forma)">Submit</button>
 </div>
 
  

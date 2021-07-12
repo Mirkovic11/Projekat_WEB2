@@ -151,5 +151,44 @@ namespace WebApp.Controllers
     //public async Task<IActionResult>
 
 
+    [HttpGet]
+    [Route("GetAllUsers")]
+    public async Task<ICollection<UserDTO>> GetAllUsers()
+    {
+      List<UserDTO> lista = new List<UserDTO>();
+      foreach (User item in authentication.Users)
+      {
+        UserDTO user = new UserDTO();
+        user.FullName = item.FullName;
+        user.Username = item.UserName;
+        user.Street = (await data.Streets.FirstOrDefaultAsync(x => x.Id == item.StreetID)).Name;
+
+
+        lista.Add(user);
+      }
+
+      return lista;
+    }
+
+    [HttpGet]
+    [Route("GetUserByName/{name}")]
+    public async Task<UserDTO> GetUserByName(string name)
+    {
+      User user = authentication.Users.FirstOrDefault(x => x.UserName == name);
+      if (user == null)
+      {
+        return null;
+      }
+      else
+      {
+        UserDTO povratnaVr = new UserDTO();
+        povratnaVr.Username = user.UserName;
+        povratnaVr.FullName = user.FullName;
+        povratnaVr.Street = (await data.Streets.FirstOrDefaultAsync(x => x.Id == user.StreetID)).Name;
+
+
+        return povratnaVr;
+      }
+    }
   }
 }

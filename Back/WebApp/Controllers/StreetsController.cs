@@ -97,6 +97,25 @@ namespace WebApp.Controllers
       return Ok(new { prioritet });
     }
 
+
+    [HttpGet]
+    [Route("GetPriorityForCall/{street}")]
+    public IActionResult GetPriorityForCall(string street)
+    {
+      int prioritet = 0;
+      foreach (Street item in data.Streets)
+      {
+        if (item.Name == street && item.Priority > prioritet)
+        {
+          prioritet = item.Priority;
+          break;
+        }
+      }
+
+      return Ok(new { prioritet });
+    }
+
+
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
